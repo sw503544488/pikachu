@@ -123,6 +123,7 @@ body {
   border-radius: 50%;
   left: 6px;
   top: 3px;
+  animation: 5s ease-in-out 1s rotation infinite;
 }
 
 .mouth {
@@ -281,40 +282,43 @@ body {
   background-image: radial-gradient(circle at -100% 45%, #ece90b 0%, #ece90b 60%, black 60%);
 }
 
-@keyframes wiggle {
-  0% {
-    transform: rotate(-50deg);
-  }
-
-  5% {
-    transform: rotate(-60deg);
-  }
-
-  10% {
-    transform: rotate(-50deg);
-  }
-
-  12% {
-    transform: rotate(-55deg);
-  }
-
-  15% {
-    transform: rotate(-50deg);
-  }
-
-  100% {
-    transform: rotate(-50deg);
-  }
-}
 
 .left-ear {
   left: 170px;
   bottom: -300px;
   transform: rotate(-25deg);
   background-image: radial-gradient(circle at 200% 45%, #ece90b 0%, #ece90b 60%, black 60%);
-  animation: 5s 5s infinite wiggle;
-  animation-fill-mode: forwards;
+  animation: 5s 1.5s infinite wiggle;
+  /* animation-fill-mode: forwards; */
   animation-direction: alternate;
+  /* animation-delay: 1.5s; */
+}
+
+@keyframes rotation {
+  0% {
+    transform: translateX(0);
+  }
+
+  20% {
+    transform: translateX(27px);
+  }
+
+  40% {
+    transform: translateX(20px);
+  }
+
+  50% {
+    transform: translateX(25px);
+
+  }
+
+  60% {
+    transform: translateX(20px) translateY(25px);
+  }
+
+  80% {
+    transform: translateX(0);
+  }
 }
 
 @keyframes wiggle {
